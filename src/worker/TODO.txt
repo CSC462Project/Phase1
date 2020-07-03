@@ -1,0 +1,18 @@
+#TODO: Provide the linux binary for terraform as part of the submission
+#TODO: Test the terraform binary on school servers
+
+
+#NOTE: Terraform will work as a binary on linux.csc.uvic.ca, but needs Docker to create containers. I am not able
+to install Docker, so we will need to think how this will work
+
+Requirements:
+
+Docker must be installed
+
+
+
+Terraform is provided as binary, and will install packages in the working directory. However, this
+ will require read/write permissions in the working directory.
+
+
+ #TODO: Look into rm option in docker_container provider to see if we can auto shutdown containers when they are finished
