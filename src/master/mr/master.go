@@ -85,7 +85,7 @@ func (m *Master) MyCallHandler(args *MyArgs, reply *MyReply) error {
 
 // timerForWorker : monitor the worker
 func (m *Master)timerForWorker(taskType, identify string) {
-	ticker := time.NewTicker(10 * time.Second)
+	ticker := time.NewTicker(100 * time.Second)
 	defer ticker.Stop()
 	for {
 		select {
