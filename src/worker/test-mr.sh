@@ -26,6 +26,7 @@ rm -f mr-*
 (cd .. && go build $RACE mrworker.go) || exit 1
 (cd .. && go build $RACE mrsequential.go) || exit 1
 
+
 failed_any=0
 
 # first word-count

@@ -1,18 +1,30 @@
-#TODO: Provide the linux binary for terraform as part of the submission
-#TODO: Test the terraform binary on school servers
-
-
-#NOTE: Terraform will work as a binary on linux.csc.uvic.ca, but needs Docker to create containers. I am not able
-to install Docker, so we will need to think how this will work
-
 Requirements:
 
-Docker must be installed
+ - Docker version 19 or above.
+ - Ensure the Docker daemon is running
+
+NOTE: This was unable to be tested on linux.csc.uvic.ca due to Docker not being/unable to be installed.
+
+ - Golang 1.13
+
+ - Terraform (either installed in binaries directory or provided locally)
+ We will provide Linux binaries for Terraform for 32-bit and 64-bit systems in zip folders within the main project
+ directory. However, the binary you will be using must be extracted and placed within the main project directory:
+
+ PhaseI/src/
+
+- Ensure you have full permissions enabled within project directory. Terraform will download dependencies and store them
+locally, but have full permissions in the project directory to avoid any unexpected issues.
+
+
+Guide:
+
+Navigate to the Phase1/src/ directory.
+
+Unzip the Terraform binary for your operating system or navigate to https://www.terraform.io/downloads.html to download
+different binaries if needed.
+
+    - In either case, the Terraform binary MUST be place within the PhaseI/src/ directory
 
 
 
-Terraform is provided as binary, and will install packages in the working directory. However, this
- will require read/write permissions in the working directory.
-
-
- #TODO: Look into rm option in docker_container provider to see if we can auto shutdown containers when they are finished
