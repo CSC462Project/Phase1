@@ -1,4 +1,7 @@
 
+variable home {}
+
+
 resource "docker_network" "private_network" {
   name = "mr-network"
   attachable = true
@@ -25,7 +28,7 @@ resource "docker_container" "go_master" {
   mounts  {
       type = "bind"
       target = "/go/master"
-      source = "/Users/cameronwilson/go/src/Phase1/src/master"
+      source = "${var.home}/go/src/Phase1/src/master"
   }
 
   must_run = true
@@ -70,10 +73,9 @@ resource "docker_container" "go_worker1" {
   mounts  {
     type = "bind"
     target = "/go/worker"
-    source = "/Users/cameronwilson/go/src/Phase1/src/worker"
+    source = "${var.home}/go/src/Phase1/src/worker"
   }
 
-  env = ["MASTER_HOSTNAME=${docker_container.go_master.id}\n"]
 
 }
 
@@ -99,10 +101,10 @@ resource "docker_container" "go_worker2" {
   mounts  {
     type = "bind"
     target = "/go/worker"
-    source = "/Users/cameronwilson/go/src/Phase1/src/worker"
+    source = "${var.home}/go/src/Phase1/src/worker"
   }
 
-  env = ["MASTER_HOSTNAME=${docker_container.go_master.id}\n"]
+
 
 
 }
@@ -128,10 +130,7 @@ resource "docker_container" "go_worker3" {
   mounts  {
     type = "bind"
     target = "/go/worker"
-    source = "/Users/cameronwilson/go/src/Phase1/src/worker"
+    source = "${var.home}/go/src/Phase1/src/worker"
   }
-
-  env = ["MASTER_HOSTNAME=${docker_container.go_master.id}\n"]
-
 
 }
