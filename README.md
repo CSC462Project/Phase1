@@ -49,24 +49,17 @@ this will allow Terraform to acquire the necessary packages to use in the Terraf
 
 3. Run the command:
 
-<<<<<<< Updated upstream
 bash test-mr.sh <user_directory>
-=======
-bash test-mr.sh <home_directory>
->>>>>>> Stashed changes
 
 or change the permissions of the file to run it as an executable using:
 
 chmod +x test-mr.sh
 
-<<<<<<< Updated upstream
 ./test-mr.sh <user_directory>
-=======
-./test-mr.sh <home_directory>
 
->>>>>>> Stashed changes
 
-<home_directory> should be replaced with the directory in which the go/ folder in contained in. This MUST be an absolute
+
+<user_directory> should be replaced with the directory in which the go/ folder in contained in. This MUST be an absolute
 path (i.e. do not use $HOME or $PWD when providing this value. It isn't supported when coded into Terraform and has not been
 tested as a command line argument)
 
@@ -74,3 +67,6 @@ Files should shortly appear in the worker/ directory.
 
 The program is finished when there are 10 files in each of the 10 reduce categories and 10 final output files. 
 
+
+
+NOTE: To run the program with different amounts of worker nodes, either move the terraform binary into the specific folder in the terraform_plans directory or if you have the binary added to your PATH, simply run terraform in any of the test scenario directories in terraform_plans.
