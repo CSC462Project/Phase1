@@ -49,13 +49,13 @@ this will allow Terraform to acquire the necessary packages to use in the Terraf
 
 3. Run the command:
 
-bash test-mr.sh
+bash test-mr.sh <user_directory>
 
 or change the permissions of the file to run it as an executable using:
 
 chmod +x test-mr.sh
 
-./test-mr.sh
+./test-mr.sh <user_directory>
 
 
 Files should shortly appear in the worker/ directory.
