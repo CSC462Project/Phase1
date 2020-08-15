@@ -6,5 +6,11 @@ mrtmp.*
 /pbservice/x.txt
 /kvpaxos/x.txt
 *.so
-.terraform
+./src/.terraform/
 worker/mr-*
+terraform.tfstate
+terraform.tfstate.backup
+planfile
+TODO.txt
+.idea
+.terraform/

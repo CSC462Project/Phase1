@@ -34,7 +34,7 @@ Linux. If you would like a binary for a different operating system, follow
 this link: https://www.terraform.io/downloads.html
 
 
-
+NOTE: Make sure the Terraform binary is in the project directory (i.e. src/) before running the script. 
 
 Guide: 
 
@@ -42,21 +42,33 @@ Guide:
 
 2. Run the following command:
 
-    terraform init
+    ./terraform init (if using the local binary, other use 'terraform init')
     
 this will allow Terraform to acquire the necessary packages to use in the Terraform script, 'docker_network.tf'
 
 
 3. Run the command:
 
+<<<<<<< Updated upstream
 bash test-mr.sh <user_directory>
+=======
+bash test-mr.sh <home_directory>
+>>>>>>> Stashed changes
 
 or change the permissions of the file to run it as an executable using:
 
 chmod +x test-mr.sh
 
+<<<<<<< Updated upstream
 ./test-mr.sh <user_directory>
+=======
+./test-mr.sh <home_directory>
 
+>>>>>>> Stashed changes
+
+<home_directory> should be replaced with the directory in which the go/ folder in contained in. This MUST be an absolute
+path (i.e. do not use $HOME or $PWD when providing this value. It isn't supported when coded into Terraform and has not been
+tested as a command line argument)
 
 Files should shortly appear in the worker/ directory.
 
