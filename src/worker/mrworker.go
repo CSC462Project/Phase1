@@ -10,13 +10,22 @@ package main
 // Please do not change this file.
 //
 
-import "./mr"
+import (
+	"./mr"
+	"time"
+
+	//"math/big"
+	//"time"
+)
 import "plugin"
 import "os"
 import "fmt"
 import "log"
 
 func main() {
+
+	start := time.Now()
+	fmt.Printf("Timer started at %s\n", start)
 	if len(os.Args) != 2 {
 		fmt.Fprintf(os.Stderr, "Usage: mrworker xxx.so\n")
 		os.Exit(1)
@@ -25,6 +34,10 @@ func main() {
 	mapf, reducef := loadPlugin(os.Args[1])
 
 	mr.Worker(mapf, reducef)
+
+	elapsed := time.Since(start)
+	fmt.Printf("Worker took %s\n", elapsed)
+
 }
 
 //
